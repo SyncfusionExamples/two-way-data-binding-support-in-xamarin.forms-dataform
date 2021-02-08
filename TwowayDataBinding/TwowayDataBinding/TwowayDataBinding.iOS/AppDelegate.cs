@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Syncfusion.XForms.iOS.DataForm;
 using UIKit;
 
 namespace TwowayDataBinding.iOS
@@ -24,7 +25,7 @@ namespace TwowayDataBinding.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            SfDataFormRenderer.Init();
             return base.FinishedLaunching(app, options);
         }
     }

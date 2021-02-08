@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:TwowayDataBinding" 
              xmlns:dataForm ="clr-namespace:Syncfusion.XForms.DataForm;assembly=Syncfusion.SfDataForm.XForms"
              x:Class="TwowayDataBinding.MainPage">
+
+    <ContentPage.Behaviors>
+        <local:DataFormBehavior/>
+    </ContentPage.Behaviors>
+    <ContentPage.BindingContext>
+        <local:DataformViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -11,7 +18,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button x:Name="button" Grid.Row="0" WidthRequest="100" HeightRequest="30" Text="UpdateModel"/>
-            <dataForm:SfDataForm x:Name="dataForm" WidthRequest="100" HeightRequest="500" Grid.Row="1" NotifyPropertyChanges="True"/>
+            <dataForm:SfDataForm x:Name="dataForm" WidthRequest="100" DataObject="{Binding Contactsform}" HeightRequest="500" Grid.Row="1" NotifyPropertyChanges="True"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
